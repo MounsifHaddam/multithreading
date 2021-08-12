@@ -1,0 +1,36 @@
+fig=plt.figure(figsize=(18, 16), dpi= 80, facecolor='w', edgecolor='k')
+# importing matplotlib module 
+import matplotlib
+from matplotlib import pyplot as plt 
+
+plt.grid(True)
+# For size array 80M
+x = [1,2,4,6,8,12] 
+y = [609836,540403.25,452320.75,382052.5,356845.5,353359.1] 
+# For size array 10M
+f=[1,2,4,6,8,12]
+e=[162726,153475,133590.5,106435.75,99093,102911]
+# For size array 40M
+r=[1,2,4,6,8,12]
+g=[290992,266575.75,255283.0,181166.25,154332.75,149827]
+
+plt.plot(x,y,"r--",label="array size=80M",linewidth=6)
+plt.plot(r,g,label="array size=40M",linewidth=6)
+plt.plot(f,e,"b:o",label="array size=10M",linewidth=6)
+
+
+plt.text(2,540403.25,r'size array 80M',fontsize=20)
+plt.text(4,255283.0,r'size array 40M',fontsize=20)
+plt.text(4,133590,r'size array 10M',fontsize=20)
+
+plt.title('Time, Threads',fontsize=19)
+plt.xlabel('THREADS',fontsize=19)
+plt.ylabel('TIME µs',fontsize=19)
+
+
+plt.savefig('ScatterPlot_01.png')
+plt.legend(fontsize=19)
+matplotlib.pyplot.xticks(fontsize=20)
+matplotlib.pyplot.yticks(fontsize=20)
+
+plt.show()
